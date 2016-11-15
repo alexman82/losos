@@ -1,0 +1,155 @@
+<!Doctype html>
+<html>
+   <head>
+   	<meta charset="utf-8">
+   	<title>My website name</title>
+   	<meta name="description" content="decription about my website">
+   	<link href="media/css/style.css" rel="stylesheet">
+   </head>
+ <body>
+ 	
+    <div class="mainblock">
+    	<header class="header">
+    		<img src="media/img/logo.png" class="logo">
+    		<h1 class="logotex">Instagram</h1>
+    	</header>
+ 	<div class="top">
+ 		<nav class="topmenu">
+ 			<a href="#">О компании</a>
+ 			<a href="#">Новости</a>
+ 			<a href="#">Вакансии</a>
+ 			<a href="#">Контакты</a>
+        </nav>
+ 	</div> <!----end of top class -->
+ 	<section class="real-block">
+ 		<nav class="left-menu">
+ 			<a href="#">Website development</a>
+ 			<a href="#">SEO</a>
+ 			<a href="#">Organization</a>
+ 		</nav>
+ 		<article class="text-block">
+        <h2>Forms</h2>
+        <form action="#" method="post">
+          <p>
+
+          <label for="fio">Name</label>
+          <input type="text" name="fio"/>
+        </p>
+        
+        <textarea id="1" name="body" rows=10 cols=30 onInput="validate(this)">text</textarea>
+         </p>
+          <input type="radio" value="1">
+          <input type="radio" value="2">
+        <p>
+          <select name="mulist">
+            <option value="1">one</option>
+            <option value="2">two</option>
+          </select>
+        </p>
+        <p>
+          <label for="email">email</label>
+          <input type="email" name="email"/>
+        </p>
+        <p>
+          <input type="submit" value="Send"> </p>
+          <p>
+            <p>
+              <label for="search">Search</label>
+              <input type="search" name="search" list="datalist">
+            </p>
+            <p>
+              <label for="URL">URL</label>
+              <input type="url" name="url">
+            </p>
+            <p>
+              <label for="tel">tel</label>
+              <input type="tel" name="tel">
+            </p>
+
+            <p>
+              <label for="number">Number</label>
+              <input type="number" name="number" min=0 max=1000 step=5>
+            </p>
+
+            <p>
+              <label for="range">Range</label>
+              <input type="range" name="range" min=0 max=1000 step=5>
+            </p>
+
+            <p>
+              <label for="progress">Progress</label>
+              <progress value=75 max=100>waiting...</progress>
+            </p>
+
+            <p>
+              <label for="meter">Meter</label>
+              <meter min=0 max=100 low=40 height=90 optimum=70 value=95>Meter</meter>
+            </p>
+
+            <p>
+              <label for="date">date</label>
+              <input type="date">
+            </p>
+            <p>
+              <label for="date">date</label>
+              <input type="datetime-local">
+            </p>
+
+            <p>
+              <label for="color">color</label>
+              <input type="color">
+            </p>
+
+            <p>
+              <label for="text">text</label>
+              <input type="text" name="rcode" pattern="[A-Z]{3}-[0-9]{3}">
+            </p>
+
+            <p>
+              <datalist id="datalist">
+                <option value="123-123" label="tel1"/>
+                  <option value="134-134" label="tel2"/>
+              </datalist>
+            </p>
+            <p>
+              <input type="email" autocomplete="off">
+            </p>
+
+            <p>
+              <input type="text" placeholder="your name">
+            </p>
+
+            <p class="text" contentEditable>
+              <input type="email" multiple=true>
+            </p>
+
+            <p class="text" contentEditable>You can edit this text</p>
+
+            <script>
+            function validate(input) { 
+              console.log(input);
+              if(input.value.length < 10){
+                input.setCustomValidity('You have entered less than 10 characters');
+              }
+                else {
+                  input.setCustomValidity("");
+              }
+            }
+
+            </script>
+
+</form>
+
+
+
+
+ 		</article>
+ 	</section>
+<footer class="footer">
+	<a href="mailto:mikhalkevich@ya.ru">mikhalkevich@ya.ru</a>
+&copy;2016
+</footer>
+
+ 	</div><!----end of mainblock class -->
+ </body>  
+</html>
