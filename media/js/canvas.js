@@ -253,11 +253,13 @@ canvas.moveTo(90, 700);
 canvas.quadraticCurveTo(180, 300, 200, 700);
 canvas.fill();
 canvas.stroke();
+
 canvas.beginPath();
 canvas.moveTo(550, 700);
 canvas.quadraticCurveTo(630, 350, 750, 700);
 canvas.fill();
 canvas.stroke();
+
    canvas.beginPath();
 	canvas.moveTo(120, 420);
 	canvas.lineTo(110, 430);
