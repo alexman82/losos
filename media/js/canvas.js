@@ -3,8 +3,9 @@ var canvas, clear, empty;
 var x = 680, y = 500, max = 683, min = 330, right = 921, d=600, e=600, o=0, bearx=320, beary=180;
 var cross=[]; boxxx=[]; boyyy=[];
 var count=5;
-var food= false;
-var boxcross = false;
+var food=false;
+var boxcross=false;
+var var_move=false;
 var losos='media/img/losos.png', bear1='media/img/bear.png', toxic='media/img/toxic.png';
 
 					function initiate (){
@@ -46,8 +47,18 @@ var losos='media/img/losos.png', bear1='media/img/bear.png', toxic='media/img/to
 
 					function animation(e){
 					canvas.clearRect(0, 0, 921, 683);
-				    animation_move(e);
+				    if (count>9){
+							var_move=true;
+						}
+						if (var_move==true) {
+							bear_move();
+						}
+						else{
+								bear(e);
+							}
+					animation_move(e);
 					}
+					
 
 function animation_move(e){
 						var img=new Image();
@@ -89,13 +100,7 @@ function animation_move(e){
 						count = sessionStorage['count'];
 
 						show();
-						if (count<10){
-					bear(e);
-					}
-					else {
-						bear_move();
-						}	
-								
+						
 					   
 						}
 						
@@ -193,7 +198,7 @@ function draw_r(xx=[],yy=[],u=[]){
 	//console.log(img);
 	for (var i = 0; i < xx.length; i++) {
 	//console.log(xx[i]+'/////');
-    canvas.clearRect(xx[i], yy[i], 150, 65);
+    canvas.clearRect(xx[i], yy[i], 103, 65);
 	animation_move(e);
 	canvas.drawImage(img, xx[i], yy[i]);
 	canvas.beginPath();
@@ -236,7 +241,7 @@ function draw_r(xx=[],yy=[],u=[]){
 		
 function plankton() {
 	/*console.log (food);*/
-	canvas.clearRect (d, e, 10, 5);
+	canvas.clearRect (d, e, 9, 5);
 	canvas.fillStyle='black';
 	canvas.fillRect(d, e, 5, 5);
 	canvas.fill
