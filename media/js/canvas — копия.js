@@ -1,16 +1,14 @@
 addEventListener('load', initiate);
 var canvas, clear, empty;
-var x = 680, y = 500, max = 683, min = 330, right = 921, d=600, e=600, o=0, bearx=320, beary=180;
+var x = 680, y = 500, max = 683, min = 330, right = 921, d=600, e=600; o=0; 
 var cross=[]; boxxx=[]; boyyy=[];
 var count=5;
 var food= false;
-var boxcross = false;
 var losos='media/img/losos.png', bear1='media/img/bear.png', toxic='media/img/toxic.png';
 
 					function initiate (){
                         media = document.getElementById('media');
-						media_toxic = document.getElementById('media_toxic');
-						media_Crash = document.getElementById('media_crash')
+						media_toxic = document.getElementById('media_toxic')
 						empty = document.getElementById('count');
 
 						clear=document.getElementById('clear');
@@ -26,8 +24,7 @@ var losos='media/img/losos.png', bear1='media/img/bear.png', toxic='media/img/to
 					     //draw(520,400,1);
 						 draw_r([680,520],[500,400],[2.2,1])
 					     plankton();
-						              										
-						}
+					    }
 
 					    function clearAll(){
 					    	sessionStorage.clear();
@@ -46,7 +43,8 @@ var losos='media/img/losos.png', bear1='media/img/bear.png', toxic='media/img/to
 
 					function animation(e){
 					canvas.clearRect(0, 0, 921, 683);
-				    animation_move(e);
+				    bear(e);	 
+					animation_move(e);
 					}
 
 function animation_move(e){
@@ -89,14 +87,9 @@ function animation_move(e){
 						count = sessionStorage['count'];
 
 						show();
-						if (count<10){
-					bear(e);
-					}
-					else {
-						bear_move();
-						}	
-								
-					   
+						
+						
+					
 						}
 						
 for (a=0; a<boxxx.length; a++){
@@ -109,8 +102,6 @@ for (a=0; a<boxxx.length; a++){
 	if(box==true && box_w==true) {
 		sessionStorage.setItem('count', Number(count)-1);
 		count = sessionStorage['count'];
-		boxcross = true;
-		media_crash.play();
 		show();
 	}
 }						
@@ -154,18 +145,6 @@ function bear (e){
 	canvas.fill();
 }
 
-function bear_move() {
-	canvas.clearRect (bearx, beary, 921, 162);
-	var img=new Image();
-	img.src=bear1;
-	canvas.drawImage(img, bearx, beary);
-	bearx += 1;
-	requestAnimationFrame(bear_move);
-		if (bearx > 921) {
-		bearx=0; 
-}
-}
-
 function selfRandom(min, max){
 	return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -198,22 +177,12 @@ function draw_r(xx=[],yy=[],u=[]){
 	canvas.drawImage(img, xx[i], yy[i]);
 	canvas.beginPath();
 	xx[i] += -u[i];
-		if (boxcross == false){
-			if (xx[i] < -100) {
-				xx[i]=680; 
-				yy[i]=selfRandom(350, 683);
-			}
-			boxxx[i] = xx[i];
-			boyyy[i] = yy[i];
-			} 
-			else {
-			boxcross = false;
-            xx[i]=920; 
-            yy[i]=selfRandom(350, 683);
-			boxxx[i] = xx[i];
-			boyyy[i] = yy[i];
-			}
-
+	if (xx[i] < -100) {
+		xx[i] = 680;
+		yy[i] = selfRandom(350, 683);
+	}
+	boxxx[i] = xx[i];
+	boyyy[i] = yy[i];
 	}
 	requestAnimationFrame(function(){
 	draw_r(xx,yy,u);
@@ -305,3 +274,8 @@ canvas.stroke();
 	canvas.lineTo(175, 420);
 	canvas.fill();
 	canvas.closePath();*/
+
+
+
+
+
