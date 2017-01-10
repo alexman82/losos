@@ -65,3 +65,23 @@ border-bottom: solid 1px orange;}
 .text-block {
 	margin-left: 205px;
 }
+
+.left{
+	float:left;
+}
+
+.right {
+	float:right;
+}
+
+#count {
+	font-size:36px;
+	text-shadow: 1px 1px 1px white;
+	color: gold;
+	background: black;
+	padding: 15px;
+	text-align:center;
+	margin-bottom:10px;
+	margin-top: 10px;
+	border-radius: 6px;
+}
